@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -22,13 +23,29 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // return (
+  //   <html lang="en">
+  //     <body
+  //       className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+  //     >
+  //       {children}
+  //     </body>
+  //   </html>
+  // );
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
+      <head>
+        {/* Preconnect for Google Fonts */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        
+        {/* Import the three fonts: Press Start 2P, VT323, Roboto Mono */}
+        <link
+          href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&family=Roboto+Mono&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body>{children}</body>
     </html>
   );
 }

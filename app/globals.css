@@ -18,4 +18,33 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+  cursor: url('/cursor.svg') 16 16, auto;
+}
+
+button {
+  /* "pointer" after the custom cursor ensures compatibility if the custom cursor fails to load */
+  background-color: #FFAFEC;
+  border-left: 4px solid black;
+  border-bottom: 4px solid black;
+  border-top: 4px solid white;
+  border-right: 4px solid white;
+  padding: 1rem 2rem;
+  margin: 1rem;
+  cursor: pointer;
+  font-family: 'VT323', monospace;
+  cursor: url('/handcursor.svg') 16 16, pointer;
+}
+
+button:active{
+  background-color: #FFAFEC;
+  border-left: 0;
+  border-bottom: 0;
+  border-top: 4px solid white;
+  border-right: 4px solid white;
+  padding: 1rem 2rem;
+  margin: 1rem;
+  cursor: pointer;
+  font-family: 'VT323', monospace;
+  color: white;
+  cursor: url('/handcursor.svg') 16 16, pointer;
 }
